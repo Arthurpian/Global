@@ -43,8 +43,7 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
 
 ## **Projeto em execução**
 O projeto foi testado usando o Postman junto com o H2 Console aonde pelo H2 Console foi inserido o seguinte comando
-´´´
-
+```
     -- Inserir cliente
 INSERT INTO cliente (cliente_uuid, name, endereco, cpf_cnpj, tipo, cep, ativo)
 VALUES ('7da41106-5109-45f4-8d09-9ca405c33e5c', 'João da Silva', 'Rua das Flores, 41', '966.351.800-60', 'PF', '055345-120', TRUE);
@@ -64,9 +63,7 @@ VALUES ('64abe035-37a5-4382-b2ec-ae9961835b3b', '10ea3582-000d-4546-afdf-8677bc5
     -- Inserir registro de produção
 INSERT INTO registro_producao (registro_producao_uuid, contrato_uuid, producao_kwh, medicao_timestamp)
 VALUES ('17a71709-5c16-4fc8-9517-0151bbf514a1', '10ea3582-000d-4546-afdf-8677bc58e606', 120.0, 1732284100);
-
-´´´
-
+ ```
 
 Após inserir esses dados foi Usado o Postman para adicionar novos usuarios e as outras modificações e consultas
 
