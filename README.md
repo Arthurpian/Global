@@ -48,6 +48,7 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
 - Método: POST
 - URL: /clientes
 - Exemplo de Body (JSON)
+ ```
   {
   "name": "João da Silva",
   "endereco": "Rua das Flores, 41",
@@ -56,7 +57,9 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
   "cep": "055345-120",
   "ativo": true
   }
+```
 - Resposta de Sucesso:
+```
 {
   "clienteUuid": "7da41106-5109-45f4-8d09-9ca405c33e5c",
   "name": "João da Silva",
@@ -66,11 +69,13 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
   "cep": "055345-120",
   "ativo": true
   }
+  ```
 
 2. Listar Todos os Clientes
 - Método: GET 
 - URL: /clientes
 - Resposta de Sucesso:
+```
   {
   "clienteUuid": "7da41106-5109-45f4-8d09-9ca405c33e5c",
   "name": "João da Silva",
@@ -80,7 +85,7 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
   "cep": "055345-120",
   "ativo": true
   }
-
+```
 3. Buscar Cliente por UUID
 - Método: GET
 - URL: /clientes/{clienteUuid}
@@ -100,19 +105,21 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
 - Método: POST
 - URL: /instalacoes 
 - Exemplo de Body (JSON):
+   ```
    {
    "endereco": "Rua das Flores, 41",
    "cep": "055345-120",
    "ativo": true
-   }
+   ```}
 - Resposta de Sucesso:
-    {
+```
+  {
     "instalacaoUuid": "84b4b063-58a4-4dab-bf4f-fd13954c328c",
     "endereco": "Rua das Flores, 41",
     "cep": "055345-120",
     "ativo": true
     }
-
+```
 2. Listar Todas as Instalações
 - Método: GET
 - URL: /instalacoes
@@ -128,20 +135,23 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
 - Método: POST
 - URL: /contratos
 - Exemplo de Body (JSON):
+```
    {
    "clienteUuid": "7da41106-5109-45f4-8d09-9ca405c33e5c",
    "instalacaoUuid": "84b4b063-58a4-4dab-bf4f-fd13954c328c",
    "duracaoContrato": 180,
    "ativo": true
    }
+```
 - Exemplo de Corpo (JSON):
+```
   {
   "clienteUuid": "7da41106-5109-45f4-8d09-9ca405c33e5c",
   "instalacaoUuid": "84b4b063-58a4-4dab-bf4f-fd13954c328c",
   "duracaoContrato": 180,
   "ativo": true
   }
-
+```
 2. Listar Contratos por Cliente
 - Método: GET
 - URL: /contratos/{clienteUuid}
@@ -156,6 +166,7 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
 - Método: POST
 - URL: /consumo
 - Exemplo de Body (JSON):
+```
    {
    "contrato": {
    "contratoUuid": "10ea3582-000d-4546-afdf-8677bc58e606"
@@ -163,7 +174,7 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
    "consumoKwh": 450.0,
    "medicaoTimestamp": 1732284100
    }
-
+```
 2. Listar Registros de Consumo por Contrato
 - Método: GET
 - URL: /consumo/{contratoUuid}
@@ -173,14 +184,15 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
 - Método: POST
 - URL: /producao
 - Exemplo de Body (JSON):
-   {
+```
+{
    "contrato": {
    "contratoUuid": "10ea3582-000d-4546-afdf-8677bc58e606"
    },
    "producaoKwh": 120.0,
    "medicaoTimestamp": 1732284100
    }
-
+```
 2. Listar Registros de Produção por Contrato
 - Método: GET
 - URL: /producao/{contratoUuid}
