@@ -62,9 +62,8 @@ VALUES ('64abe035-37a5-4382-b2ec-ae9961835b3b', '10ea3582-000d-4546-afdf-8677bc5
 
 -- Inserir registro de produção
 INSERT INTO registro_producao (registro_producao_uuid, contrato_uuid, producao_kwh, medicao_timestamp)
-VALUES ('17a71709-5c16-4fc8-9517-0151bbf514a1', '10ea3582-000d-4546-afdf-8677bc58e606', 120.0, 1732284100);
+VALUES ('17a71709-5c16-4fc8-9517-0151bbf514a1', '10ea3582-000d-4546-afdf-8677bc58e606', 120.0, 1732284100);´´´
 
-´´´
 Após inserir esses dados foi Usado o Postman para adicionar novos usuarios e as outras modificações e consultas
 
 
