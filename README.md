@@ -39,7 +39,34 @@ dados de consumo e produção de energia de maneira eficiente, utilizando o banc
 - **H2 Console: http://localhost:8080/h2-console**
 - **JDBC URL: jdbc:h2:mem:testdb**
 - **Username: sa**
-- **Password: (deixe vazio)**
+- **Password: password**
+
+## **Projeto em execução**
+O projeto foi testado usando o Postman junto com o H2 Console aonde pelo H2 Console foi inserido o seguinte comando
+´´´
+-- Inserir cliente
+INSERT INTO cliente (cliente_uuid, name, endereco, cpf_cnpj, tipo, cep, ativo)
+VALUES ('7da41106-5109-45f4-8d09-9ca405c33e5c', 'João da Silva', 'Rua das Flores, 41', '966.351.800-60', 'PF', '055345-120', TRUE);
+
+-- Inserir instalação
+INSERT INTO instalacao (instalacao_uuid, endereco, cep, ativo, cliente_uuid)
+VALUES ('84b4b063-58a4-4dab-bf4f-fd13954c328c', 'Rua das Flores, 41', '055345-120', TRUE, '7da41106-5109-45f4-8d09-9ca405c33e5c');
+
+-- Inserir contrato
+INSERT INTO contrato (contrato_uuid, cliente_uuid, instalacao_uuid, data_inicio, duracao_contrato, ativo)
+VALUES ('10ea3582-000d-4546-afdf-8677bc58e606', '7da41106-5109-45f4-8d09-9ca405c33e5c', '84b4b063-58a4-4dab-bf4f-fd13954c328c', '2024-11-20', 180, TRUE);
+
+-- Inserir registro de consumo
+INSERT INTO registro_consumo (id, contrato_uuid, consumo_kwh, medicao_timestamp)
+VALUES ('64abe035-37a5-4382-b2ec-ae9961835b3b', '10ea3582-000d-4546-afdf-8677bc58e606', 450.0, 1732284100);
+
+-- Inserir registro de produção
+INSERT INTO registro_producao (registro_producao_uuid, contrato_uuid, producao_kwh, medicao_timestamp)
+VALUES ('17a71709-5c16-4fc8-9517-0151bbf514a1', '10ea3582-000d-4546-afdf-8677bc58e606', 120.0, 1732284100);
+
+´´´
+Após inserir esses dados foi Usado o Postman para adicionar novos usuarios e as outras modificações e consultas
+
 
 ### **Endpoints da API**
 
